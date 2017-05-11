@@ -1,5 +1,6 @@
 These directories contain some MATLAB code I wrote for preprocessing and quality assessment of fMRI data. Here's a brief overview of how the code is organized and what it does:
 
+```
 ├── fmri_multiecho_preprocessing  <- Dir with code for fMRI preprocessing
 │   ├── coreg_normalize_smooth.m  <- SPM12 job for coregistration, normalization, and smoothing
 │   ├── dicom_import.m            <- SPM12 job for DICOM to NIfTI conversion
@@ -18,3 +19,4 @@ These directories contain some MATLAB code I wrote for preprocessing and quality
 │   ├── bztbx_truncrp.m           <- Truncates realignment parameters
 │   └── bztbx_tsnr.m              <- Computes temporal signal to noise ratio of fMRI time series
 ├── README.md                     <- The file you're reading now
+```
