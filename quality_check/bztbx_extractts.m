@@ -108,7 +108,7 @@ for iMask = 1:size(VM,1)
     
     countz = 0;
     for z = find(nMVoxSl > 0)
-
+        
         countNz = numel(find(nMVoxSl > 0));
         countz = countz + 1;
         
@@ -132,8 +132,8 @@ for iMask = 1:size(VM,1)
             case 'hpf'
                 Y = spm_filter(HPF,Y.*kron(gSF,ones(1,nVox)));
         end
-
-        tsmean(:,iMask) = tsmean(:,iMask) + nMVoxSl(z)/nMVox*nanmean(Y(:,Cm),2);
+        
+        tsmean(:,iMask) = nansum([tsmean(:,iMask), nMVoxSl(z)/nMVox*nanmean(Y(:,Cm),2)],2);
 
         spm_progress_bar('Set',100*((iMask - 1)/size(VM,1) + 1/size(VM,1)*countz/countNz));
         
